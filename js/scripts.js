@@ -71,23 +71,25 @@ const swiperMarks = new Swiper(".rullerMarksContainer", {
     loop: false,
     slidesPerView: 5,
     spaceBetween: 16,
-    centeredSlides: true,
 
     breakpoints: {
         // when window width is >= 320px
         320: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 16,
+            centeredSlides: true,
         },
         // when window width is >= 480px
         480: {
             slidesPerView: 2,
             spaceBetween: 16,
+            centeredSlides: true,
         },
         // when window width is >= 640px
         640: {
             slidesPerView: 2,
             spaceBetween: 16,
+            centeredSlides: true,
         },
         1023: {
             slidesPerView: 5,
