@@ -25,6 +25,10 @@ const swiper = new Swiper(".swiper", {
             slidesPerView: 2,
             spaceBetween: 40,
         },
+        800: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+        },
         1023: {
             slidesPerView: 5,
             spaceBetween: 16,
@@ -66,36 +70,70 @@ const swiperCond = new Swiper(".conditionsContainer", {
         },
     },
 });
-const swiperMarks = new Swiper(".rullerMarksContainer", {
-    // Optional parameters
-    loop: false,
-    slidesPerView: 5,
-    spaceBetween: 16,
+// const swiperMarks = new Swiper(".rullerMarksContainer", {
+//     // Optional parameters
+//     loop: false,
+//     slidesPerView: 5,
+//     spaceBetween: 16,
 
-    breakpoints: {
-        // when window width is >= 320px
-        320: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            centeredSlides: true,
+//     breakpoints: {
+//         // when window width is >= 320px
+//         320: {
+//             slidesPerView: 2,
+//             spaceBetween: 16,
+//             centeredSlides: true,
+//         },
+//         // when window width is >= 480px
+//         480: {
+//             slidesPerView: 2,
+//             spaceBetween: 16,
+//             centeredSlides: true,
+//         },
+//         // when window width is >= 640px
+//         640: {
+//             slidesPerView: 2,
+//             spaceBetween: 16,
+//             centeredSlides: true,
+//         },
+//         1023: {
+//             slidesPerView: 5,
+//             spaceBetween: 16,
+//         },
+//     },
+// });
+
+//Slick
+$(".rullerMarksContainer").slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+            },
         },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            centeredSlides: true,
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
         },
-        // when window width is >= 640px
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            centeredSlides: true,
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            },
         },
-        1023: {
-            slidesPerView: 5,
-            spaceBetween: 16,
-        },
-    },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ],
 });
 
 if (window.matchMedia("(max-width: 1023px)").matches) {
